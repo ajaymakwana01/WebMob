@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class BlogCategory extends Model
 {
     /**
    * The database table used by the model.
@@ -12,7 +12,7 @@ class Category extends Model
    * @var string
    */
 
-  protected $table = 'categories';
+  protected $table = 'blog_category';
 
   /**
    * The attributes to be fillable from the model.
@@ -25,11 +25,4 @@ class Category extends Model
   protected $fillable = [];
   protected $guarded = ['id'];
 
-  /**
-   * this function describe inverser many to many relationship with blog
-   */
-  public function blog()
-  {
-      return $this->belongsToMany(Blog::class);
-  }
 }

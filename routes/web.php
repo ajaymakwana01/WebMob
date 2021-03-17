@@ -16,8 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/showblog/{blogId}', 'HomeController@showBlogs')->name('show.blog')->withoutMiddleware(['auth']);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/blog', 'BlogController');
+
+Route::prefix('/')->name('user.')->middleware(['auth'])->group(function () {
+    Route::post('blog', 'HomeController@addBlog')->name('addblog');
+});
