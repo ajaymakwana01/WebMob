@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    WebMob Blogs
                 </div>
 
                 <div class="links">
